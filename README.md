@@ -16,7 +16,7 @@ This project using Java with Maven Selenium and Maven JUnit libraries.
 
 There is positive and negative test cases.
 
-## Positive Test Cases (src/test/java/com/automationpractice/tests/PositiveTests.java)
+# Positive Test Cases (src/test/java/com/automationpractice/tests/PositiveTests.java)
 
 # 1. Automate User Registration process of e-commerce website.
 * Open this url  http://automationpractice.com/index.php
@@ -27,7 +27,7 @@ There is positive and negative test cases.
 * Click on Register button.
 * Validate that user is created.
 
-## Negative Test Cases (src/test/java/com/automationpractice/tests/NegativeTests.java)
+# Negative Test Cases (src/test/java/com/automationpractice/tests/NegativeTests.java)
 
 # 1. Verify invalid email address error.
 * Open this url  http://automationpractice.com/index.php
