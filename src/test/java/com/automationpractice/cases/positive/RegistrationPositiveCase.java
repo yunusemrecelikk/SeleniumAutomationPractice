@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 public class RegistrationPositiveCase {
     Methods methods;
 
-    private final String emailAddress = "pageg318086@ishop2k.com";
+    private final String emailAddress = "pageg318088@ishop2k.com";
 
     public RegistrationPositiveCase() {
         methods = new Methods();
