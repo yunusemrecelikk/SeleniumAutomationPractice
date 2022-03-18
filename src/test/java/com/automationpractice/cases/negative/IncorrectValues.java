@@ -1,17 +1,14 @@
-package com.automationpractice.cases.positive;
+package com.automationpractice.cases.negative;
 
 import com.automationpractice.methods.Methods;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class RegistrationPositiveCase {
+public class IncorrectValues {
     Methods methods;
+    private final String emailAddress = "testvalues@ishop2k.com";
 
-    private final String emailAddress = "pageg318088@ishop2k.com";
-
-    public RegistrationPositiveCase() {
-        methods = new Methods();
-    }
+    public IncorrectValues() { methods = new Methods(); }
 
     public void clickSignInButton() {
         try {
@@ -21,7 +18,7 @@ public class RegistrationPositiveCase {
 
             By signinTextLocator = By.cssSelector("#create-account_form > .page-subheading");
             String signinText = methods.getElementsText(signinTextLocator);
-            Assert.assertEquals("Verification Failed: Account creation verification failed," +
+            Assert.assertEquals("Verification Failed: Registration page verification failed," +
                     " test case failed.", "CREATE AN ACCOUNT", signinText);
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,14 +58,14 @@ public class RegistrationPositiveCase {
                     "test case failed", methods.isElementSelected(genderRadio));
 
             By firstNameInput = By.id("customer_firstname");
-            methods.sendKeysToElement(firstNameInput, "Selenium");
-            Assert.assertEquals("Verification failed: The firstname input text is not Selenium, " +
-                    "test case failed.", "Selenium", methods.getElementsValue(firstNameInput));
+            methods.sendKeysToElement(firstNameInput, "?Selenium,.");
+            Assert.assertEquals("Verification failed: The firstname input text is not ?Selenium,., " +
+                    "test case failed.", "?Selenium,.", methods.getElementsValue(firstNameInput));
 
             By lastNameInput = By.id("customer_lastname");
-            methods.sendKeysToElement(lastNameInput, "Automation");
-            Assert.assertEquals("Verification failed: The lastname input text is not Automation, " +
-                    "test case failed.", "Automation", methods.getElementsValue(lastNameInput));
+            methods.sendKeysToElement(lastNameInput, "A-utomation|;");
+            Assert.assertEquals("Verification failed: The lastname input text is not A-utomation|;, " +
+                    "test case failed.", "A-utomation|;", methods.getElementsValue(lastNameInput));
 
             By emailInput = By.id("email");
             Assert.assertEquals("Verification failed: The email input text is not "+emailAddress+", " +
@@ -95,18 +92,18 @@ public class RegistrationPositiveCase {
                     "test case failed.", "2000  ", methods.getSelectedText(dobYear));
 
             By addressFirstNameInput = By.id("firstname");
-            Assert.assertEquals("Verification failed: The adress firstname input text is not Selenium, " +
-                    "test case failed.", "Selenium", methods.getElementsValue(addressFirstNameInput));
+            Assert.assertEquals("Verification failed: The adress firstname input text is not ?Selenium,., " +
+                    "test case failed.", "?Selenium,.", methods.getElementsValue(addressFirstNameInput));
 
             By addressLastNameInput = By.id("lastname");
-            Assert.assertEquals("Verification failed: The address lastname input text is not Automation, " +
-                    "test case failed.", "Automation", methods.getElementsValue(addressLastNameInput));
+            Assert.assertEquals("Verification failed: The address lastname input text is not A-utomation|;, " +
+                    "test case failed.", "A-utomation|;", methods.getElementsValue(addressLastNameInput));
 
             By addressInformationInput = By.id("address1");
             methods.sendKeysToElement(addressInformationInput, "random address information");
             Assert.assertEquals("Verification failed: The address information input text " +
-                    "is not random address information, " +
-                    "test case failed.", "random address information",
+                            "is not random address information, " +
+                            "test case failed.", "random address information",
                     methods.getElementsValue(addressInformationInput));
 
             By addressCityInput = By.id("city");
@@ -120,14 +117,14 @@ public class RegistrationPositiveCase {
                     "test case failed.", "Alabama", methods.getSelectedText(addressStateSelect));
 
             By addressZipInput = By.id("postcode");
-            methods.sendKeysToElement(addressZipInput, "34100");
-            Assert.assertEquals("Verification failed: The address zip input is not 34100, " +
-                    "test case failed.", "34100", methods.getElementsValue(addressZipInput));
+            methods.sendKeysToElement(addressZipInput, "3A1W0");
+            Assert.assertEquals("Verification failed: The address zip input is not 3A1W0, " +
+                    "test case failed.", "3A1W0", methods.getElementsValue(addressZipInput));
 
             By addressPhoneNumberInput = By.id("phone_mobile");
-            methods.sendKeysToElement(addressPhoneNumberInput, "1234567890");
-            Assert.assertEquals("Verification failed: The address phone number input is not 1234567890, " +
-                    "test case failed.", "1234567890", methods.getElementsValue(addressPhoneNumberInput));
+            methods.sendKeysToElement(addressPhoneNumberInput, "1as456vs9q");
+            Assert.assertEquals("Verification failed: The address phone number input is not 1as456vs9q, " +
+                    "test case failed.", "1as456vs9q", methods.getElementsValue(addressPhoneNumberInput));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -138,11 +135,13 @@ public class RegistrationPositiveCase {
         try {
             methods.clickElement(By.id("submitAccount"));
 
-            By myAccountLocator = By.cssSelector(".header_user_info > .account");
-            methods.waitUntilElementLocated(myAccountLocator);
-            String accountCheckText = methods.getElementsText(myAccountLocator);
-            Assert.assertEquals("Verification failed: Account name didn't match, test case failed.",
-                    "Selenium Automation", accountCheckText);
+            By errorTextLocator = By.xpath("//*[@class=\"alert alert-danger\"]//ol[not(@id) and not(@class)]//li[contains(text(),'invalid.')]");
+            methods.waitUntilElementLocated(errorTextLocator);
+
+            String errorText = methods.getElementsText(errorTextLocator);
+            boolean errorTextContains = errorText.contains("invalid");
+            Assert.assertTrue("Verification Failed: Error text does not contains \"invalid\"", errorTextContains);
+            System.out.println("Verification Successful.");
 
             System.out.println("====================");
             System.out.println("Test successfully passed!");
@@ -151,5 +150,6 @@ public class RegistrationPositiveCase {
             e.printStackTrace();
         }
     }
+
 
 }

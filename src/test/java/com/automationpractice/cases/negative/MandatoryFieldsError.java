@@ -10,7 +10,7 @@ public class MandatoryFieldsError {
 
     public MandatoryFieldsError() { methods = new Methods(); }
 
-    public void ClickSignInButton() {
+    public void clickSignInButton() {
         try {
             By signinButtonLocator = By.cssSelector(".header_user_info > .login");
             methods.waitUntilElementCliclable(signinButtonLocator);
@@ -18,14 +18,14 @@ public class MandatoryFieldsError {
 
             By signinTextLocator = By.cssSelector("#create-account_form > .page-subheading");
             String signinText = methods.getElementsText(signinTextLocator);
-            Assert.assertEquals("Verification Failed: Registration page verification failed," +
+            Assert.assertEquals("Verification Failed: Account creation verification failed," +
                     " test case failed.", "CREATE AN ACCOUNT", signinText);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void InsertEmail() {
+    public void insertEmail() {
         try {
             By emailInputLocator = By.id("email_create");
             methods.sendKeysToElement(emailInputLocator, emailAddress);
@@ -37,7 +37,7 @@ public class MandatoryFieldsError {
         }
     }
 
-    public void ClickCreateAccount() {
+    public void clickCreateAccount() {
         try {
             By createAccountButton = By.id("SubmitCreate");
             methods.clickElement(createAccountButton);
@@ -49,7 +49,7 @@ public class MandatoryFieldsError {
         }
     }
 
-    public void EnterInformation() {
+    public void enterInformation() {
         try {
             methods.waitUntilElementLocated(By.cssSelector(".account_creation > .clearfix"));
             By genderRadio = By.id("id_gender1");
@@ -77,7 +77,7 @@ public class MandatoryFieldsError {
         }
     }
 
-    public void ClickRegisterButton() {
+    public void clickRegisterButton() {
         try {
             methods.clickElement(By.id("submitAccount"));
 

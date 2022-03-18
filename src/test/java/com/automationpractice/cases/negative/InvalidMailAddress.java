@@ -19,7 +19,7 @@ public class InvalidMailAddress {
 
             By signinTextLocator = By.cssSelector("#create-account_form > .page-subheading");
             String signinText = methods.getElementsText(signinTextLocator);
-            Assert.assertEquals("Verification Failed: Registration page verification failed," +
+            Assert.assertEquals("Verification Failed: Account creation verification failed," +
                     " test case failed.", "CREATE AN ACCOUNT", signinText);
         } catch (Exception e) {
             e.printStackTrace();

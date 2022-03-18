@@ -10,11 +10,11 @@ public class PositiveTests extends BaseTest {
     public void positiveRegistrationTest() { // Automate User Registration process of e-commerce website.
         RegistrationPositiveCase registrationPositiveCase = new RegistrationPositiveCase();
 
-        registrationPositiveCase.ClickSignInButton();
-        registrationPositiveCase.InsertEmail();
-        registrationPositiveCase.ClickCreateAccount();
-        registrationPositiveCase.EnterInformation();
-        registrationPositiveCase.ClickRegisterButton();
+        registrationPositiveCase.clickSignInButton();
+        registrationPositiveCase.insertEmail();
+        registrationPositiveCase.clickCreateAccount();
+        registrationPositiveCase.enterInformation();
+        registrationPositiveCase.clickRegisterButton();
     }
 
 }

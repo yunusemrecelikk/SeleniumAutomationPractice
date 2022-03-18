@@ -16,9 +16,9 @@ This project using Java with Maven Selenium and Maven JUnit libraries.
 
 There is positive and negative test cases.
 
-# Positive Test Cases (src/test/java/com/automationpractice/tests/PositiveTests.java)
+### Positive Test Cases (src/test/java/com/automationpractice/tests/PositiveTests.java)
 
-# 1. Automate User Registration process of e-commerce website.
+### 1. Automate User Registration process of e-commerce website.
 * Open this url  http://automationpractice.com/index.php
 * Click on sign in link.
 * Enter your email address in 'Create and account' section.
@@ -27,20 +27,27 @@ There is positive and negative test cases.
 * Click on Register button.
 * Validate that user is created.
 
-# Negative Test Cases (src/test/java/com/automationpractice/tests/NegativeTests.java)
+### Negative Test Cases (src/test/java/com/automationpractice/tests/NegativeTests.java)
 
-# 1. Verify invalid email address error.
+### 1. Verify invalid email address error.
 * Open this url  http://automationpractice.com/index.php
 * Click on sign in link.
 * Enter invalid email address in the email box and click enter.
 * Validate that an error message is displaying saying "Invalid email address."
 
-# 2. Verify error messages for mandatory fields.
+### 2. Verify error messages for mandatory fields.
 * Open this url  http://automationpractice.com/index.php
 * Click on sign in link.
 * Enter email address and click Register button.
 * Leave the mandatory fields (marked with *) blank and click Register button.
 * Verify that error has been displayed for the mandatory fields.
+
+### 3. Verify error messages for entering incorrect values in fields.
+* Open this url  http://automationpractice.com/index.php
+* Click on sign in link.
+* Enter email address and click Register button.
+* Enter incorrect values in fields like., enter numbers in first and last name, city field etc., and enter alphabets in Mobile no, Zip postal code etc., and click on 'Register' button.
+* Verify that error messages fpr respective fields are displaying.
 
 ## Credits
 

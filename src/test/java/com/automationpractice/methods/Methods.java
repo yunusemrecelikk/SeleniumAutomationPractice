@@ -1,8 +1,6 @@
 package com.automationpractice.methods;
 
 import com.automationpractice.driver.BaseTest;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,7 +14,6 @@ public class Methods {
     WebDriver webDriver;
     JavascriptExecutor jsDriver;
     FluentWait<WebDriver> wait;
-    Logger logger = LogManager.getLogger(Methods.class);
 
     public Methods() {
         webDriver = BaseTest.webDriver;
@@ -25,10 +22,6 @@ public class Methods {
         wait.withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofMillis(300))
                 .ignoring(NoSuchElementException.class);
-    }
-
-    public void createLog(String txt) {
-        logger.info(txt);
     }
 
     public void waitUntilElementLocated(By el) {
