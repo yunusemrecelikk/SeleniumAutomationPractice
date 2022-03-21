@@ -27,6 +27,14 @@ There is positive and negative test cases.
 * Click on Register button.
 * Validate that user is created.
 
+### 2. Automate 'Search Product' feature of e-commerce website with Selenium.
+* Open link http://automationpractice.com/index.php
+* Move your cursor over Women's link.
+* Click on sub menu 'T-shirts'
+* Get Name/Text of the first product displayed on the page.
+* Now enter the same product name in the search bar present on top of page and click search button.
+* Validate that same product is displayed on searched page with same details which were displayed on T-Shirt's page.
+
 ### Negative Test Cases (src/test/java/com/automationpractice/tests/NegativeTests.java)
 
 ### 1. Verify invalid email address error.

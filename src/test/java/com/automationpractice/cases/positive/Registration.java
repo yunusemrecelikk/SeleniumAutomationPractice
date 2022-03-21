@@ -4,12 +4,12 @@ import com.automationpractice.methods.Methods;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class RegistrationPositiveCase {
+public class Registration {
     Methods methods;
 
     private final String emailAddress = "pageg318088@ishop2k.com";
 
-    public RegistrationPositiveCase() {
+    public Registration() {
         methods = new Methods();
     }
 
