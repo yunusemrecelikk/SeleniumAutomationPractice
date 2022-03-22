@@ -1,9 +1,11 @@
 package com.automationpractice.tests;
 
+import com.automationpractice.cases.positive.BuyProduct;
 import com.automationpractice.cases.positive.Registration;
 import com.automationpractice.cases.positive.SearchProduct;
 import com.automationpractice.driver.BaseTest;
 import org.junit.Test;
+import org.openqa.selenium.By;
 
 public class PositiveTests extends BaseTest {
 
@@ -26,4 +28,18 @@ public class PositiveTests extends BaseTest {
         searchProduct.searchTheProduct();
         searchProduct.validateProduct();
     }
+
+    @Test
+    public void positiveBuyProduct(){
+        BuyProduct buyProduct = new BuyProduct();
+        buyProduct.loginToWebsite();
+        buyProduct.openCategory();
+        buyProduct.openFirstProduct();
+        buyProduct.increaseQuantity();
+        buyProduct.selectSize();
+        buyProduct.selectColor();
+        buyProduct.clickAddToCart();
+        buyProduct.buyTheProduct();
+    }
 }
+

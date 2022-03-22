@@ -2,6 +2,9 @@
 
 <br />
 <div align="center">
+    <a>
+        <img src="https://rapidapi.com/blog/wp-content/uploads/2016/12/giphy-11.gif" alt="logo" width="300" height="200" />
+    </a>
   <h3 align="center">automationpractice.com Selenium Automation Practices</h3>
 
   <p align="center">
@@ -16,7 +19,7 @@ This project using Java with Maven Selenium and Maven JUnit libraries.
 
 There is positive and negative test cases.
 
-### Positive Test Cases (src/test/java/com/automationpractice/tests/PositiveTests.java)
+### <div align="center"> Positive Test Cases <br> (src/test/java/com/automationpractice/tests/PositiveTests.java) </div>
 
 ### 1. Automate User Registration process of e-commerce website.
 * Open this url  http://automationpractice.com/index.php
@@ -35,7 +38,22 @@ There is positive and negative test cases.
 * Now enter the same product name in the search bar present on top of page and click search button.
 * Validate that same product is displayed on searched page with same details which were displayed on T-Shirt's page.
 
-### Negative Test Cases (src/test/java/com/automationpractice/tests/NegativeTests.java)
+### 3. Automate end-to-end "Buy Product" feature of the e-commerce website.
+* Open link http://automationpractice.com/index.php
+* Login to the website.
+* Move your cursor over Women's link.
+* Click on sub menu 'T-shirts'.
+* Mouse hover on the second product displayed.
+* 'More' button will be displayed, click on 'More' button.
+* Increase quantity to 2.
+* Select size 'L'
+* Select color.
+* Click 'Add to Cart' button.
+* Click 'Proceed to checkout' button.
+* Complete the buy order process till payment.
+* Make sure that Product is ordered.
+
+### <div align="center"> Negative Test Cases <br> (src/test/java/com/automationpractice/tests/NegativeTests.java) </div>
 
 ### 1. Verify invalid email address error.
 * Open this url  http://automationpractice.com/index.php
